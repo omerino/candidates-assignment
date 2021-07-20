@@ -15,12 +15,14 @@ else
 fi
 
 
-### copy keys to server1 ###
-sudo apt update -y > /dev/null 2>$1
-sshpass -p 'vagrant' ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@server1 >> /dev/null 2>&1
+#sudo apt update -y > /dev/null 2>$1
 
 ### allowing public key authentication ###
 sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
 
 ### disabling host key checking ###
 sudo sed -i 's/#StrictHostKeyChecking ask/StrictHostKeyChecking no/g' /etc/ssh/ssh_config
+
+### copy keys to server1 ###
+sshpass -p 'vagrant' ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@server1 >> /dev/null 2>&1
+
