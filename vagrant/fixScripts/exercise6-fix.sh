@@ -16,8 +16,11 @@ esac
 ### Testing ruslts (disblae comment out on while testing)  ###
 #echo $dst
 
+### declaring variables ###
 dstpath=${!#}
 totalbytes=0
+
+### looping thorugh all argemnutes and running scp commnad against each of them execpt the last one###
 
 for p in "$@"
 do
