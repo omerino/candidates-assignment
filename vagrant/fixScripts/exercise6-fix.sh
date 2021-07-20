@@ -1,5 +1,5 @@
 #!/bin/bash
-#add fix to exercise6-fix
+#add fix to exercise6-fix here
 
 ### determine source and destination ###
 
